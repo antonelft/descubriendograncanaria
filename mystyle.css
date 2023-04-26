@@ -1,0 +1,87 @@
+body {
+    background-color: white;
+    overflow: hidden;
+}
+
+h1 {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(80, 80, 80);
+    text-align: center;
+    width: 2300px;
+    height: 80px;
+    position: relative;
+    left: -223px;
+    top: -22px;
+}
+
+
+#grancan {
+    position: relative;
+    top: 100px;
+    width: 1000px;
+    height: 600px;
+}
+
+
+.nuevolug {
+padding: 0;
+border: none;
+background-color: black;
+color: white;
+font-weight: 1000;
+position: relative;
+left: 720px;
+top: -540px;
+}
+
+.nuevolugx {
+padding: 0;
+border: none;
+background-color: black;
+color: white;
+font-weight: 1000;
+position: relative;
+left: 720px;
+top: -540px;
+}
+
+
+.lugaresx {
+    padding: 0;
+    border: none;
+    background-color: black;
+    color:  white;
+    font-weight: 1000;
+    position: relative;
+    left: 740px;
+    top: -540px;
+    }
+
+
+.lugares {
+    padding: 0;
+    border: none;
+    background-color: black;
+    color:  white;
+    font-weight: 1000;
+    position: relative;
+    left: 740px;
+    top: -540px;
+    }
+
+.lugares:hover {
+    color: red;
+}
+
+.nuevolug:hover {
+    color: red;
+}
+
+
+.para {
+    position: relative;
+    top: 100px;
+    left: 330px;
+}
+
