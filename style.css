@@ -16,6 +16,19 @@ h1 {
 }
 
 
+#anadir {
+    color: black;
+    text-align: center;
+    background-color: greenyellow;
+    position: relative;
+    left: 770px;
+    top: 100px;
+    width: 300px;
+    display: none;
+
+}
+
+
 #grancan {
     position: relative;
     top: 100px;
@@ -77,6 +90,12 @@ top: 20px;
     left: 800px;
 }
 
+#uploads {
+    position: relative;
+    top: 180px;
+    left: 750px;
+}
+
 
 #loc {
     width: 300px;
@@ -94,9 +113,42 @@ top: 20px;
     height: 20px;
 }
 
+#urlinfo {
+    position: relative;
+    top: 100px;
+    left: 800px; 
+}
+
+#urlinfox {
+    position: relative;
+    width: 300px;
+    height: 20px;
+    top: 20px;
+    left: -175px;
+}
+
+#urlinfox1 {
+    position: relative;
+    width: 300px;
+    height: 20px;
+    top: 40px;
+    left: -213px;
+}
+
+
+#urlinf1 {
+    position: relative;
+    top: 20px;
+}
+
 #enviar {
     background-color: greenyellow;
     position: relative;
     top: 200px;
     left: 920px;
+}
+
+.htext {
+    position: relative;
+    top: 1000px;
 }

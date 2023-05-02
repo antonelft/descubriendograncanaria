@@ -11,9 +11,9 @@
 <body id="bd">
     <h1 id="gh">Descubriendo Gran Canaria</h1>
     <a href="./index.html"><button class="noivo" >Atras</button></a>
-<button class="lugares">Lugares que no me puedo perder</button>
+<a href="./lugares.php"><button class="lugares">Lugares que no me puedo perder</button></a>
 
-<form id="fm1">
+<form id="fm1" action="post.php" method="POST">
     <label for="lugarn">Nombre del lugar:</label><br>
     <input type="text" id="loc" name="fname"><br>
     <label for="ldesc">Descripcion:</label><br>
@@ -24,12 +24,52 @@
 <form id="select">
     <label for="munic" id="munic">Municipio donde se encuentra:</label><br>
     <select name="munic" id="munic">
-    <option value="GRANCAN">Las Palmas de Gran Canaria</option>    
+    <option value="GRANCAN">Las Palmas de Gran Canaria</option>  
+    <option value="GRANCAN">Agaete</option>  
+    <option value="GRANCAN">Agüimes</option>  
+    <option value="GRANCAN">Artenara</option>  
+    <option value="GRANCAN">Arucas</option>  
+    <option value="GRANCAN">Firgas</option>  
+    <option value="GRANCAN">Gáldar</option>  
+    <option value="GRANCAN">Ingenio</option>  
+    <option value="GRANCAN">La Aldea de San Nicolás</option>  
+    <option value="GRANCAN">Mogán</option>  
+    <option value="GRANCAN">Moya</option>  
+    <option value="GRANCAN">San Bartolomé de Tirajana</option>  
+    <option value="GRANCAN">Santa Brígida</option>  
+    <option value="GRANCAN">Santa Lucía de Tirajana</option>  
+    <option value="GRANCAN">Santa María de Guía de Gran Canaria</option>  
+    <option value="GRANCAN">Tejeda</option>  
+    <option value="GRANCAN">Telde</option>  
+    <option value="GRANCAN">Teror</option>  
+    <option value="GRANCAN">Valleseco</option>  
+    <option value="GRANCAN">Valsequillo de Gran Canaria</option>  
+    <option value="GRANCAN">Vega de San Mateo</option>  
     </select>
 
 </form>
 
-<button id="enviar">Enviar</button>
+<form id="urlinfo">
+<label for="urlinf" id="urlinf">URL con mas information:</label>
+<input type="text" id="urlinfox" name="furl"><br>
+<label for="urlinf1" id="urlinf1">URL con enlace a Google Maps:</label>
+<input type="text" id="urlinfox1" name="furl1"><br>
+
+
+</form>
+
+
+<form id="uploads" action="/action_page.php">
+<label for="upt" id="upt"><b>Imagen:</b></label>
+    <input type="file" id="fup" name="filename">
+    <input type="submit">
+  </form>
+
+
+
+<h1 id="anadir">Agregado</h1>
+
+<button id="enviar" onclick="destruir()">Enviar</button>
 
 
 </body>
