@@ -16,6 +16,17 @@ h1 {
 }
 
 
+#anadir {
+    color: black;
+    text-align: center;
+    background-color: greenyellow;
+    position: relative;
+    left: 770px;
+    top: 100px;
+    width: 300px;
+    display: none;
+
+}
 
 
 #grancan {
