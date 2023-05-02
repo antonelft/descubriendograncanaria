@@ -90,10 +90,10 @@ top: 20px;
     left: 800px;
 }
 
-#uploads {
+#upt {
     position: relative;
-    top: 180px;
-    left: 750px;
+    top: 120px;
+    left: -10px;
 }
 
 
@@ -111,20 +111,32 @@ top: 20px;
 #munic {
     width: 300px;
     height: 20px;
+    position: relative;
+    top: 20px;
 }
 
-#urlinfo {
+
+#munict {
+    width: 300px;
+    height: 20px;
+    position: relative;
+    top: 28px;
+    left: -310px;
+}
+
+
+#urlinf {
     position: relative;
     top: 100px;
-    left: 800px; 
+    left: -302px; 
 }
 
 #urlinfox {
     position: relative;
     width: 300px;
     height: 20px;
-    top: 20px;
-    left: -175px;
+    top: 130px;
+    left: -479px;
 }
 
 #urlinfox1 {
@@ -144,7 +156,7 @@ top: 20px;
 #enviar {
     background-color: greenyellow;
     position: relative;
-    top: 200px;
+    top: 300px;
     left: 920px;
 }
 
