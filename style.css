@@ -164,3 +164,8 @@ top: 20px;
     position: relative;
     top: 1000px;
 }
+
+
+table, th, td {
+    border:1px solid black;
+  }

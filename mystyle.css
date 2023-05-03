@@ -46,6 +46,11 @@ left: 720px;
 top: -540px;
 }
 
+table, th, td {
+    background-color: black;
+    color: white;
+  }
+
 
 .lugaresx {
     padding: 0;
