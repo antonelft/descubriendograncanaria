@@ -9,7 +9,7 @@
     <title>Hola</title>
 </head>
 <body id="bd">
-<h1 id="gh">Descubriendo Gran CanariaX</h1>
+<h1 id="gh">Descubriendo Gran Canaria</h1>
 <a href="./nuevolugar.html"><button class="nuevolug" >Nuevo lugar que visitar</button></a>
 <a href="./lugares.php"><button class="lugares">Lugares que no me puedo perder</button></a>
 <table style="width:100%">
@@ -24,34 +24,34 @@
 
     </tr>
     <tr>
-      <td>test1</td>
-      <td>test2</td>
-      <td>test34</td>
-      <td>test34</td>
-      <td>test34</td>
-      <td>test34</td>
-      <td>test34</td>
+      <td><?php 
+      session_start();
+      echo $_SESSION['fname']
+       ?></td>
+      <td><?php 
+      echo $_SESSION['fname']
+       ?></td>
+      <td><?php 
+      echo $_SESSION['lname']
+       ?></td>
+      <td><?php 
+      echo $_SESSION['munic']
+       ?></td>
+      <td><?php 
+      echo $_SESSION['furl']
+       ?></td>
+      <td><?php 
+      echo $_SESSION['furl1']
+       ?></td>
     </tr>
-    <tr>
-        <td>test1</td>
-        <td>test2</td>
-        <td>test34</td>
-        <td>test34</td>
-        <td>test34</td>
-        <td>test34</td>
-        <td>test34</td>
-      </tr>
-    <tr>
-      <td>Centro comercial Moctezuma</td>
-      <td>Francisco Chang</td>
-      <td>Mexico</td>
-      <td>Mexico</td>
-      <td>Mexico</td>
-      <td>Mexico</td>
-      <td>Mexico</td>
+  
       
     </tr>
   </table>
+
+
+
+
 <marquee behavior="scroll" direction="left" class="htext">Hola</marquee>   
     
 </body>
