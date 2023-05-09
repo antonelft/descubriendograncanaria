@@ -31,29 +31,21 @@ if(!$NombreLugar) {
 if(!$Descripcion) {
   header("Location: nofunctiona.php");
 } else {
-  echo "KINDER BUENO";
-  echo '<script>alert("Todo esta bien.")</script>';
 }
 
 if(!$Municipio) {
   header("Location: nofunctiona.php");
 } else {
-  echo "KINDER BUENO";
-  echo '<script>alert("Todo esta bien.")</script>';
 }
 
 if(!$URLinfo) {
   header("Location: nofunctiona.php");
 } else {
-  echo "KINDER BUENO";
-  echo '<script>alert("Todo esta bien.")</script>';
 }
 
 if(!$URLMaps) {
   header("Location: nofunctiona.php");
 } else {
-  echo "KINDER BUENO";
-  echo '<script>alert("Todo esta bien.")</script>';
 }
 
 
