@@ -26,22 +26,22 @@
     <tr>
       <td><?php 
       session_start();
-      echo $_SESSION['fname']
+      echo $_POST["fname"];
        ?></td>
       <td><?php 
-      echo $_SESSION['fname']
+      echo $_POST["fname"];
        ?></td>
       <td><?php 
-      echo $_SESSION['lname']
+      echo $_POST["lname"];
        ?></td>
       <td><?php 
-      echo $_SESSION['munic']
+      echo $_POST["munic"];
        ?></td>
       <td><?php 
-      echo $_SESSION['furl']
+      echo $_POST["furl"];
        ?></td>
       <td><?php 
-      echo $_SESSION['furl1']
+      echo $_POST["furl1"];
        ?></td>
     </tr>
   
@@ -49,6 +49,7 @@
     </tr>
   </table>
 
+  
 
 
 

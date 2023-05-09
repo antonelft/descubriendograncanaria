@@ -16,6 +16,14 @@ h1 {
 }
 
 
+#imageupz {
+    position:relative;
+    top: 1600px;
+    width: 500px;
+    left: 700px;
+    
+}
+
 #anadir {
     color: black;
     text-align: center;

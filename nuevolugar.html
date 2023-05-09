@@ -13,58 +13,66 @@
     <a href="./index.html"><button class="noivo" >Atras</button></a>
 <a href="./lugares.php"><button class="lugares">Lugares que no me puedo perder</button></a>
 
-<form id="fm1" action="post.php" method="POST">
-    <label for="lugarn">Nombre del lugar:</label><br>
+
+
+
+
+<form id="fm1" action="lugares.php" method="POST" enctype="multipart/form-data">
+    <label for="fname">Nombre del lugar:</label><br>
     <input type="text" id="loc" name="fname"><br>
-    <label for="ldesc">Descripcion:</label><br>
+    <label for="lname">Descripcion:</label><br>
     <input type="text" id="loc1" name="lname">
 
 
 
     <label for="munic" id="munict">Municipio donde se encuentra:</label><br>
     <select name="munic" id="munic">
-    <option value="GRANCAN">Las Palmas de Gran Canaria</option>  
-    <option value="GRANCAN">Agaete</option>  
-    <option value="GRANCAN">Agüimes</option>  
-    <option value="GRANCAN">Artenara</option>  
-    <option value="GRANCAN">Arucas</option>  
-    <option value="GRANCAN">Firgas</option>  
-    <option value="GRANCAN">Gáldar</option>  
-    <option value="GRANCAN">Ingenio</option>  
-    <option value="GRANCAN">La Aldea de San Nicolás</option>  
-    <option value="GRANCAN">Mogán</option>  
-    <option value="GRANCAN">Moya</option>  
-    <option value="GRANCAN">San Bartolomé de Tirajana</option>  
-    <option value="GRANCAN">Santa Brígida</option>  
-    <option value="GRANCAN">Santa Lucía de Tirajana</option>  
-    <option value="GRANCAN">Santa María de Guía de Gran Canaria</option>  
-    <option value="GRANCAN">Tejeda</option>  
-    <option value="GRANCAN">Telde</option>  
-    <option value="GRANCAN">Teror</option>  
-    <option value="GRANCAN">Valleseco</option>  
-    <option value="GRANCAN">Valsequillo de Gran Canaria</option>  
-    <option value="GRANCAN">Vega de San Mateo</option>  
+    <option value="Las Palmas de Gran Canaria">Las Palmas de Gran Canaria</option>  
+    <option value="Agaete">Agaete</option>  
+    <option value="Agüimes">Agüimes</option>  
+    <option value="Artenara">Artenara</option>  
+    <option value="Arucas">Arucas</option>  
+    <option value="Firgas">Firgas</option>  
+    <option value="Gáldar">Gáldar</option>  
+    <option value="Ingenio">Ingenio</option>  
+    <option value="La Aldea de San Nicolás">La Aldea de San Nicolás</option>  
+    <option value="Mogán">Mogán</option>  
+    <option value="Moya">Moya</option>  
+    <option value="San Bartolomé de Tirajana">San Bartolomé de Tirajana</option>  
+    <option value="Santa Brígida">Santa Brígida</option>  
+    <option value="Santa Lucía de Tirajana">Santa Lucía de Tirajana</option>  
+    <option value="Santa María de Guía de Gran Canaria">Santa María de Guía de Gran Canaria</option>  
+    <option value="Tejeda">Tejeda</option>  
+    <option value="Telde">Telde</option>  
+    <option value="Teror">Teror</option>  
+    <option value="Valleseco">Valleseco</option>  
+    <option value="Valsequillo de Gran Canaria">Valsequillo de Gran Canaria</option>  
+    <option value="Vega de San Mateo">Vega de San Mateo</option>  
     </select>
 
 
 
 
-<label for="urlinf" id="urlinf">URL con mas information:</label>
+<label for="furl" id="urlinf">URL con mas information:</label>
 <input type="text" id="urlinfox" name="furl"><br>
-<label for="urlinf1" id="urlinf1">URL con enlace a Google Maps:</label>
+<label for="furl1" id="urlinf1">URL con enlace a Google Maps:</label>
 <input type="text" id="urlinfox1" name="furl1"><br>
 
 
+    <input type="submit" name="submit">
+  
 
-<label for="upt" id="upt"><b>Imagen:</b></label>
-    <input type="file" id="upt" name="filename">
-  </form>
+    <form id="imageupz" action="imageup.php" method="post" enctype="multipart/form-data" >
+        <input type="file" name="banner" >
+        <input type="submit" value="submit">
+        </form>
+
+
 
 
 
 <h1 id="anadir">Agregado</h1>
 
-<button id="enviar" onclick="destruir()">Enviar</button>
 
 
 </body>
