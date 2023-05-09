@@ -9,6 +9,60 @@
     <title>Hola</title>
 </head>
 <body id="bd">
+
+<?php
+$NombreLugar = $_POST["fname"];
+$Descripcion = $_POST["lname"];
+$Municipio = $_POST["munic"];
+$URLinfo = $_POST["furl"];
+$URLMaps = $_POST["furl1"];
+
+
+
+
+
+if(!$NombreLugar) {
+  header("Location: nofunctiona.php");
+} else {
+  echo "KINDER BUENO";
+  echo '<script>alert("Todo esta bien.")</script>';
+}
+
+if(!$Descripcion) {
+  header("Location: nofunctiona.php");
+} else {
+  echo "KINDER BUENO";
+  echo '<script>alert("Todo esta bien.")</script>';
+}
+
+if(!$Municipio) {
+  header("Location: nofunctiona.php");
+} else {
+  echo "KINDER BUENO";
+  echo '<script>alert("Todo esta bien.")</script>';
+}
+
+if(!$URLinfo) {
+  header("Location: nofunctiona.php");
+} else {
+  echo "KINDER BUENO";
+  echo '<script>alert("Todo esta bien.")</script>';
+}
+
+if(!$URLMaps) {
+  header("Location: nofunctiona.php");
+} else {
+  echo "KINDER BUENO";
+  echo '<script>alert("Todo esta bien.")</script>';
+}
+
+
+
+
+
+?>
+
+
 <h1 id="gh">Descubriendo Gran Canaria</h1>
 <a href="./nuevolugar.html"><button class="nuevolug" >Nuevo lugar que visitar</button></a>
 <a href="./lugares.php"><button class="lugares">Lugares que no me puedo perder</button></a>
