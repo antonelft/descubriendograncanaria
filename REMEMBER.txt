@@ -1,0 +1,89 @@
+<?php
+
+
+/*
+  session_start();
+
+  if(isset($_POST['fname']))
+  
+{
+$_SESSION['fname'] = $_POST['fname'];
+$data=$_POST['fname'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
+
+  if(isset($_POST['lname']))
+  
+{
+$_SESSION['lname'] = $_POST['lname'];
+$data=$_POST['lname'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
+
+if(isset($_POST['munic']))
+  
+{
+$_SESSION['munic'] = $_POST['munic'];
+$data=$_POST['munic'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
+
+if(isset($_POST['furl']))
+  
+{
+$_SESSION['furl'] = $_POST['furl'];
+$data=$_POST['furl'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
+
+if(isset($_POST['furl1']))
+  
+{
+$_SESSION['furl1'] = $_POST['furl1'];
+$data=$_POST['furl1'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "grancan";
+
+/*try {
+  
+        $fname =  $_REQUEST['fname'];
+        $lname = $_REQUEST['lname'];
+        $munic =  $_REQUEST['munic'];
+        $furl = $_REQUEST['furl'];
+        $furl1 = $_REQUEST['furl1'];
+
+
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $sql = "INSERT INTO pueblos (ID, visitado, descripcion, municipio, urlinfo, urlmaps)
+  VALUES ('$fname','$lname','$munic','$furl','$furl1')";
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "New record created successfully";
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+*/
+
+
+
+
+?>

@@ -11,11 +11,70 @@
 <body id="bd">
 
 <?php
+session_start();
 $NombreLugar = $_POST["fname"];
 $Descripcion = $_POST["lname"];
 $Municipio = $_POST["munic"];
 $URLinfo = $_POST["furl"];
 $URLMaps = $_POST["furl1"];
+
+if(isset($_POST['fname']))
+  
+{
+$_SESSION['fname'] = $_POST['fname'];
+$data=$_POST['fname'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fwrite($fp, ";"); 
+fclose($fp);
+}
+
+if(isset($_POST['lname']))
+  
+{
+$_SESSION['lname'] = $_POST['lname'];
+$data=$_POST['lname'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fwrite($fp, ";");
+fclose($fp);
+}
+
+if(isset($_POST['munic']))
+  
+{
+$_SESSION['munic'] = $_POST['munic'];
+$data=$_POST['munic'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fwrite($fp, ";");
+fclose($fp);
+}
+
+
+if(isset($_POST['furl']))
+  
+{
+$_SESSION['furl'] = $_POST['furl'];
+$data=$_POST['furl'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fwrite($fp, ";");
+fclose($fp);
+}
+
+
+if(isset($_POST['furl1']))
+  
+{
+$_SESSION['furl1'] = $_POST['furl1'];
+$data=$_POST['furl1'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fwrite($fp, ";");
+fclose($fp);
+}
+
 
 
 
@@ -48,6 +107,31 @@ if(!$URLMaps) {
 } else {
 }
 
+if((strlen($NombreLugar) > 30)) {
+  header("Location: nofunctiona.php");
+}
+
+if((strlen($Descripcion) > 100)) {
+  header("Location: nofunctiona.php");
+}
+
+if((strlen($Municipio) > 30)) {
+  header("Location: nofunctiona.php");
+}
+
+
+$pattern = '/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w.-]*)*\/?$/';
+
+
+if (!preg_match($pattern, $URLinfo)) {
+  header("Location: nofunctiona.php");
+ } 
+
+if (!preg_match($pattern, $URLMaps)) {
+  header("Location: nofunctiona.php");
+ } 
+
+
 
 
 
@@ -71,7 +155,6 @@ if(!$URLMaps) {
     </tr>
     <tr>
       <td><?php 
-      session_start();
       echo $_POST["fname"];
        ?></td>
       <td><?php 
