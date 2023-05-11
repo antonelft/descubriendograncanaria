@@ -15,6 +15,7 @@
  $Municipio = $_SESSION["munic"];
  $URLinfo = $_SESSION["furl"];
  $URLMaps = $_SESSION["furl1"];
+ //$Imagen = $_SESSION["imagen"];
 
 if(!$NombreLugar) {
     echo '<script>alert("Escribe un nombre de lugar.")</script>';
@@ -37,6 +38,12 @@ if(!$URLinfo) {
 if(!$URLMaps) {
     echo '<script>alert("Escribe la enlace del google maps.")</script>';
 }
+
+/*if(!$Imagen) {
+    echo '<script>alert("No imagen.")</script>';
+  } else {
+
+  }*/
 
 
 

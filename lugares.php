@@ -17,63 +17,28 @@ $Descripcion = $_POST["lname"];
 $Municipio = $_POST["munic"];
 $URLinfo = $_POST["furl"];
 $URLMaps = $_POST["furl1"];
+//$imagen = $_POST["imagen"];
 
-if(isset($_POST['fname']))
+//print_r($_POST);
+
+if(isset($_POST['fname']) || isset($_POST['lname']) || isset($_POST['munic']) || isset($_POST['furl']) || isset($_POST['furl1']) || isset($_POST['imagen']))
   
 {
 $_SESSION['fname'] = $_POST['fname'];
-$data=$_POST['fname'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fwrite($fp, ";"); 
-fclose($fp);
-}
-
-if(isset($_POST['lname']))
-  
-{
 $_SESSION['lname'] = $_POST['lname'];
-$data=$_POST['lname'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fwrite($fp, ";");
-fclose($fp);
-}
-
-if(isset($_POST['munic']))
-  
-{
 $_SESSION['munic'] = $_POST['munic'];
-$data=$_POST['munic'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fwrite($fp, ";");
-fclose($fp);
-}
-
-
-if(isset($_POST['furl']))
-  
-{
 $_SESSION['furl'] = $_POST['furl'];
-$data=$_POST['furl'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fwrite($fp, ";");
-fclose($fp);
-}
-
-
-if(isset($_POST['furl1']))
-  
-{
 $_SESSION['furl1'] = $_POST['furl1'];
-$data=$_POST['furl1'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fwrite($fp, ";");
-fclose($fp);
+//$_SESSION['imagen'] = $_POST['imagen'];
+
+$myfile = fopen("data.txt", "a") or die("No puedo abrir!");
+$txt = "$NombreLugar;$Descripcion;$Municipio;$URLinfo;$URLMaps\n";
+fwrite($myfile, $txt);
+fclose($myfile);
+
+
 }
+
 
 
 
@@ -119,8 +84,21 @@ if((strlen($Municipio) > 30)) {
   header("Location: nofunctiona.php");
 }
 
+/*if(!$Imagen) {
+  header("Location: nofunctiona.php");
+}*/
+
 
 $pattern = '/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w.-]*)*\/?$/';
+
+
+set_error_handler(function(int $errno, string $errstr) {
+  if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
+      return false;
+  } else {
+      return true;
+  }
+}, E_WARNING);
 
 
 if (!preg_match($pattern, $URLinfo)) {
@@ -153,34 +131,39 @@ if (!preg_match($pattern, $URLMaps)) {
       <th>Imagen</th>
 
     </tr>
-    <tr>
-      <td><?php 
-      echo $_POST["fname"];
-       ?></td>
-      <td><?php 
-      echo $_POST["fname"];
-       ?></td>
-      <td><?php 
-      echo $_POST["lname"];
-       ?></td>
-      <td><?php 
-      echo $_POST["munic"];
-       ?></td>
-      <td><?php 
-      echo $_POST["furl"];
-       ?></td>
-      <td><?php 
-      echo $_POST["furl1"];
-       ?></td>
-    </tr>
-  
-      
-    </tr>
+
+    <?php
+      $myfile = fopen("data.txt", "r") or die("Unable to open file!");
+
+      while(!feof($myfile)) {
+        $line = fgets($myfile);
+        $array_line = explode(";", $line);
+        echo "<tr>
+                <td>
+                  
+                </td>
+                <td>
+                  ".$array_line[0]."
+                </td>
+                <td>
+                ".$array_line[1]."
+                </td>
+                <td>
+                  ".$array_line[2]."
+                </td>
+                <td>
+                  ".$array_line[3]."
+                </td>
+                <td>
+                  ".$array_line[4]."
+                </td>
+                <td>
+                  imagen
+                </td>                
+              </td>";
+      }
+    ?>
   </table>
-
-  
-
-
 
 <marquee behavior="scroll" direction="left" class="htext">Hola</marquee>   
     
