@@ -17,11 +17,11 @@ $Descripcion = $_POST["lname"];
 $Municipio = $_POST["munic"];
 $URLinfo = $_POST["furl"];
 $URLMaps = $_POST["furl1"];
-//$imagen = $_POST["imagen"];
+$imagen = $_FILES["imagen"]["name"];
 
-//print_r($_POST);
+//print_r($_FILES);
 
-if(isset($_POST['fname']) || isset($_POST['lname']) || isset($_POST['munic']) || isset($_POST['furl']) || isset($_POST['furl1']) || isset($_POST['imagen']))
+if(isset($_POST['fname']) || isset($_POST['lname']) || isset($_POST['munic']) || isset($_POST['furl']) || isset($_POST['furl1']) || isset($_FILES['imagen']))
   
 {
 $_SESSION['fname'] = $_POST['fname'];
@@ -31,8 +31,17 @@ $_SESSION['furl'] = $_POST['furl'];
 $_SESSION['furl1'] = $_POST['furl1'];
 //$_SESSION['imagen'] = $_POST['imagen'];
 
-$myfile = fopen("data.txt", "a") or die("No puedo abrir!");
-$txt = "$NombreLugar;$Descripcion;$Municipio;$URLinfo;$URLMaps\n";
+$fileUploadDir = "./upload";
+
+    if (!(move_uploaded_file($_FILES["imagen"]["tmp_name"], $fileUploadDir."/".$_FILES["imagen"]["tmp_name"])))
+        echo "<br>Error al subir el fichero";
+
+
+
+
+
+$myfile = fopen("datax.csv", "a") or die("No puedo abrir!");
+$txt = "$NombreLugar;$Descripcion;$Municipio;$URLinfo;$URLMaps;$imagen\n";
 fwrite($myfile, $txt);
 fclose($myfile);
 
@@ -45,11 +54,12 @@ fclose($myfile);
 
 
 
+
 if(!$NombreLugar) {
   header("Location: nofunctiona.php");
 } else {
   echo "KINDER BUENO";
-  echo '<script>alert("Todo esta bien.")</script>';
+  header("Location: miralugares.php");
 }
 
 if(!$Descripcion) {
@@ -133,11 +143,14 @@ if (!preg_match($pattern, $URLMaps)) {
     </tr>
 
     <?php
-      $myfile = fopen("data.txt", "r") or die("Unable to open file!");
+      $myfile = fopen("datax.csv", "r") or die("Unable to open file!");
+
+      //$datax = array();
 
       while(!feof($myfile)) {
         $line = fgets($myfile);
         $array_line = explode(";", $line);
+        //$datax[] = explode(";",fgets($myfile));
         echo "<tr>
                 <td>
                   
@@ -158,7 +171,7 @@ if (!preg_match($pattern, $URLMaps)) {
                   ".$array_line[4]."
                 </td>
                 <td>
-                  imagen
+                  ".$array_line[5]."
                 </td>                
               </td>";
       }

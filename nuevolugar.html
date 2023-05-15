@@ -11,13 +11,13 @@
 <body id="bd">
     <h1 id="gh">Descubriendo Gran Canaria</h1>
     <a href="./index.html"><button class="noivo" >Atras</button></a>
-<a href="./lugares.php"><button class="lugares">Lugares que no me puedo perder</button></a>
+<a href="./miralugares.php"><button class="lugares">Lugares que no me puedo perder</button></a>
 
 
 
 
-
-<form id="fm1" action="lugares.php" method="POST">
+<form action="lugares.php" method="POST">
+<form id="fm1" action="lugares.php" method="POST" enctype="multipart/form-data">
     <label for="fname">Nombre del lugar:</label><br>
     <input type="text" id="loc" name="fname"><br>
     <label for="lname">Descripcion:</label><br>
@@ -62,8 +62,8 @@
   
 
    
-<label for="imagen">Imagen:</label>
-<input type="file" id="imagen" name="imagen" accept="image/*" >
+<label id="upt" for="imagen">Imagen:</label>
+<input type="file" id="upt" name="imagen" accept="image/*" >
 
 <input type="submit" value="Enviar">
 </form>
