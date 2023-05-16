@@ -19,7 +19,8 @@ $URLinfo = $_POST["furl"];
 $URLMaps = $_POST["furl1"];
 $imagen = $_FILES["imagen"]["name"];
 
-//print_r($_FILES);
+print_r($_FILES);
+print_r($_POST);
 
 if(isset($_POST['fname']) || isset($_POST['lname']) || isset($_POST['munic']) || isset($_POST['furl']) || isset($_POST['furl1']) || isset($_FILES['imagen']))
   
@@ -33,7 +34,9 @@ $_SESSION['furl1'] = $_POST['furl1'];
 
 $fileUploadDir = "./upload";
 
-    if (!(move_uploaded_file($_FILES["imagen"]["tmp_name"], $fileUploadDir."/".$_FILES["imagen"]["tmp_name"])))
+echo "<br>Tmp name of the file:".$_FILES["imagen"]["tmp_name"];
+echo "<br>Destination file:".$fileUploadDir."/".$_FILES["imagen"]["name"];
+    if (!(move_uploaded_file($_FILES["imagen"]["tmp_name"], $fileUploadDir."/".$_FILES["imagen"]["name"])))
         echo "<br>Error al subir el fichero";
 
 
@@ -47,7 +50,6 @@ fclose($myfile);
 
 
 }
-
 
 
 

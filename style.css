@@ -24,6 +24,14 @@ h1 {
     
 }
 
+
+#ups {
+    position: relative;
+    top: 100px;
+    left: 200px;
+    z-index: 999;
+}
+
 #anadir {
     color: black;
     text-align: center;

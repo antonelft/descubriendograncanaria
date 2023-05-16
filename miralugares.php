@@ -56,7 +56,7 @@
         //$datax[] = explode(";",fgets($myfile));
         echo "<tr>
                 <td>
-                  <td><input type='checkbox' checked='checked'></td>;
+                  <td><input type='checkbox'></td>;
                 </td>
                 <td>
                   ".$array_line[0]."

@@ -11,3 +11,11 @@ function destruir() {
 } 
 
 
+
+
+submitForms = function(){
+  document.getElementById("fm1").submit();
+  document.getElementById("fm2").submit();
+}
+
+
