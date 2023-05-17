@@ -74,7 +74,7 @@
                   ".$array_line[4]."
                 </td>
                 <td>
-                    <img src='upload/".$array_line[5]."' width='200px'></td> 
+                    <a target='_blank' href='upload/".$array_line[5]."'><img src='upload/".$array_line[5]."' width='200px'></td></a> 
                 </td>                
               </td>";
       }

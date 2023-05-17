@@ -32,16 +32,39 @@ $_SESSION['furl'] = $_POST['furl'];
 $_SESSION['furl1'] = $_POST['furl1'];
 //$_SESSION['imagen'] = $_POST['imagen'];
 
-$fileUploadDir = "./upload";
 
-echo "<br>Tmp name of the file:".$_FILES["imagen"]["tmp_name"];
-echo "<br>Destination file:".$fileUploadDir."/".$_FILES["imagen"]["name"];
+
+
+}
+
+
+
+if(!$NombreLugar) {
+  header("Location: nofunctiona.php");
+}
+
+if(!$Municipio) {
+  header("Location: nofunctiona.php");
+}
+
+if(!$Descripcion) {
+  header("Location: nofunctiona.php");
+}
+
+
+$pattern = '/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w.-]*)*\/?$/';
+
+if(!preg_match($pattern, $URLinfo) && !preg_match($pattern, $URLMaps)) {
+  header("Location: nofunctiona.php");
+} else {
+
+
+  $fileUploadDir = "./upload";
+
+  echo "<br>Tmp name of the file:".$_FILES["imagen"]["tmp_name"];
+  echo "<br>Destination file:".$fileUploadDir."/".$_FILES["imagen"]["name"];
     if (!(move_uploaded_file($_FILES["imagen"]["tmp_name"], $fileUploadDir."/".$_FILES["imagen"]["name"])))
         echo "<br>Error al subir el fichero";
-
-
-
-
 
 $myfile = fopen("datax.csv", "a") or die("No puedo abrir!");
 $txt = "$NombreLugar;$Descripcion;$Municipio;$URLinfo;$URLMaps;$imagen\n";
@@ -49,40 +72,11 @@ fwrite($myfile, $txt);
 fclose($myfile);
 
 
-}
 
-
-
-
-
-
-
-if(!$NombreLugar) {
-  header("Location: nofunctiona.php");
-} else {
   echo "KINDER BUENO";
   header("Location: miralugares.php");
 }
 
-if(!$Descripcion) {
-  header("Location: nofunctiona.php");
-} else {
-}
-
-if(!$Municipio) {
-  header("Location: nofunctiona.php");
-} else {
-}
-
-if(!$URLinfo) {
-  header("Location: nofunctiona.php");
-} else {
-}
-
-if(!$URLMaps) {
-  header("Location: nofunctiona.php");
-} else {
-}
 
 if((strlen($NombreLugar) > 30)) {
   header("Location: nofunctiona.php");
@@ -96,12 +90,21 @@ if((strlen($Municipio) > 30)) {
   header("Location: nofunctiona.php");
 }
 
+if((strlen($URLinfo) > 150)) {
+  header("Location: nofunctiona.php");
+}
+
+if((strlen($URLMaps) > 150)) {
+  header("Location: nofunctiona.php");
+}
+
+
 /*if(!$Imagen) {
   header("Location: nofunctiona.php");
 }*/
 
 
-$pattern = '/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w.-]*)*\/?$/';
+
 
 
 set_error_handler(function(int $errno, string $errstr) {
@@ -112,14 +115,7 @@ set_error_handler(function(int $errno, string $errstr) {
   }
 }, E_WARNING);
 
-
-if (!preg_match($pattern, $URLinfo)) {
-  header("Location: nofunctiona.php");
- } 
-
-if (!preg_match($pattern, $URLMaps)) {
-  header("Location: nofunctiona.php");
- } 
+ 
 
 
 
